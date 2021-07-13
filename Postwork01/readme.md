@@ -20,3 +20,6 @@ __Notas para los datos de soccer:__ https://www.football-data.co.uk/notes.txt
 
 #### Solución
     <a href="Postwork01.R"><strong>Código resultante »</strong></a>
+<br />
+    <a href="Postwork01.R"><strong>Explora el código »</strong></a>
+    <br/>
