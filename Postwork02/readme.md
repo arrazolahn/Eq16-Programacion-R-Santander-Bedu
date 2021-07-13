@@ -52,7 +52,7 @@ setwd ("C:/Users/arraz/Documents/Bedu_statisticsWithR/spainleague") #Cambia el d
  
 ```
 <p align="center">
-        <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork02/imagenes/img1.PNG" alt="Tabla Frecuencia de locales">
+        <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork02/imagenes/img1.PNG">
 </p>
 
 3.Seleccionamos solo las columnas que utilizaremos usando `select` y `lapply`
@@ -69,7 +69,7 @@ setwd ("C:/Users/arraz/Documents/Bedu_statisticsWithR/spainleague") #Cambia el d
   
   ```
   <p align="center">
-        <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork02/imagenes/img2.PNG" alt="Tabla Frecuencia de locales">
+        <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork02/imagenes/img2.PNG">
 </p>
   
   Con la función rbind y do.call formamos un único data frame que contenga las seis columnas mencionadas en el punto 3 y lo guardamos como archivo 
@@ -83,5 +83,4 @@ setwd ("C:/Users/arraz/Documents/Bedu_statisticsWithR/spainleague") #Cambia el d
 <br />
     <a href="soccer.csv"><strong>Ver archivo resultante</strong></a>
     <br/>
-```r
-```
+
