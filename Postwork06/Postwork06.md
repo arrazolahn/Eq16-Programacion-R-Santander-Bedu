@@ -32,4 +32,42 @@ data$sumagoles <- data$home.score + data$away.score
     <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork06/imagenes/img1.PNG">
 </p>
 
-3. 
+2. Obtenemos el promedio por mes de la suma de goles.
+
+Separamos los datos creando una nueva variable para el numero de mes y de año
+```r
+
+data$month <- as.numeric(month(data$date))
+data$year <- as.numeric(year(data$date))
+```
+
+Agrupamos los datos por año y por mes, y creamos el promedio
+```
+df <- data %>% 
+  group_by(year,month) %>%
+  summarize(promedio_goles=mean(sumagoles))
+dataOrder <- df[order(df$year,df$month),]
+```
+
+<p align="center">
+    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork06/imagenes/img2.PNG">
+</p>
+
+3. Creamos la serie de tiempo 
+
+```r
+goles.ts <- ts(dataOrder[,3],start = c(2010,8), frequency = 12,end = c(2019,12))
+```
+
+<p align="center">
+    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork06/imagenes/img3.PNG">
+</p>
+
+4.Graficamos la serie de tiempo
+
+```r
+goles.ts <- ts(dataOrder[,3],start = c(2010,8), frequency = 12,end = c(2019,12))
+```
+<p align="center">
+    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork06/imagenes/img3.PNG">
+</p>
