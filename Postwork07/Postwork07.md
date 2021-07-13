@@ -22,3 +22,27 @@ __Notas para los datos de soccer:__ https://www.football-data.co.uk/notes.txt
 <br />
     <a href="Postwork02.R"><strong>Ver el código</strong></a>
     <br/>
+1. Alojamos el fichero en mongo DB 
+
+<p align="center">
+    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork07/imagenes/img1.PNG">
+</p>
+
+2.Realizamos un count obteniendo 3801 registros
+
+```r
+mongoDB$count()
+```
+
+3. Realizamos la consulta y no obtenemos registro alguno, así mismo cerramos la conexión a nuestra BDD en MongoDB 
+   
+```r
+golesRM201215 <- mongoDB$find(
+  query = '{"Date":"2015-12-20","HomeTeam":"Real Madrid"}'
+)
+rm(mongoDB)
+```
+
+<p align="center">
+    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork07/imagenes/img2.PNG">
+</p>
