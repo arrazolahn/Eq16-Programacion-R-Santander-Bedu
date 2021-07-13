@@ -21,3 +21,90 @@ __Notas para los datos de soccer:__ https://www.football-data.co.uk/notes.txt
 <br />
     <a href="Postwork05.R"><strong>Ver el código</strong></a>
     <br/>
+
+1. Creación del nuevo archivo soccer.csv
+
+```r
+setwd ("C:/Users/arraz/Documents/Bedu_statisticsWithR/ligaesp") #Ponemos la dirección del directorio en el cual trabajaremos
+
+#guardamos los links ena variable 
+le11920 <- "https://www.football-data.co.uk/mmz4281/1920/SP1.csv"
+le11819 <- "https://www.football-data.co.uk/mmz4281/1819/SP1.csv"
+le11718 <- "https://www.football-data.co.uk/mmz4281/1718/SP1.csv"
+
+#descargamos los links de cada variable y los almacenamos con archivos csv en nuestro directorio
+download.file(url = le11920, destfile = "le1-1920.csv", mode = "wb")
+download.file(url = le11819, destfile = "le1-1829.csv", mode = "wb")
+download.file(url = le11718, destfile = "le1-1719.csv", mode = "wb")
+
+dir() 
+# leemos los archivos descargados usando la funcion lapply y guardandolos en un dataframe
+ligaesp <- lapply(dir(), read.csv)
+
+#seleccionamos las columnas que utilizaremos date, home.team, home.score, away.team y away.score; 
+ligaesp <- lapply(ligaesp, select, c("Date", "HomeTeam", "AwayTeam", "HS", "AS")) 
+
+#estandarizamos la variable que contiene fecha como date y ponemos un mismo formato de fecha en cada data frame
+ligaesp[1] <- lapply(ligaesp[1],mutate,Date=as.Date(Date,"%d/%m/%y"))
+ligaesp[2] <- lapply(ligaesp[2],mutate,Date=as.Date(Date,"%d/%m/%Y"))
+ligaesp[3] <- lapply(ligaesp[3],mutate,Date=as.Date(Date,"%d/%m/%Y"))
+str(ligaesp)
+
+#creamos el archivo SmallData usando do-call
+SmallData <- do.call(rbind, ligaesp)
+str(SmallData)
+
+#cambiamos el nombre de las columnas para que podamos usarlas facilmente con la libreria fbRanks
+SmallData <- rename(SmallData, home.team= HomeTeam, away.team = AwayTeam,
+                    home.score= HS, away.score =AS)
+head(SmallData)
+
+#guardamo el data frame como un archivo csv llamado soccer.csv. 
+write.csv(SmallData, "soccer.csv", row.names = FALSE)
+```
+<br />
+    <a href="soccer.csv"><strong>Ver archivo resultante</strong></a>
+    <br/>
+
+2.Guardar el archivo soccer en un dataframe `listasoccer` y creamos las variables `anotaciones` y `equipos`.
+
+```r
+#leemos el archivo anteriormente guardado y lo asignamos a un data frame "listasoccer"
+soccer <- read.csv("C:/Users/arraz/Documents/Bedu_statisticsWithR/ligaesp/soccer.csv")
+listasoccer<-create.fbRanks.dataframes("soccer.csv")
+
+#creamos las listas anotaciones y equipos con base a las columnas de nuestro dataframe "listasoccer" 
+anotaciones <-listasoccer$scores
+equipos <-listasoccer$teams
+head(anotaciones)
+head(equipos)
+```
+
+<p align="center">
+        <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork05/imagenes/img1.PNG">
+</p>
+
+3. Creamos el vector que contiene sin repeticiones las fechas de los partidos y creamos el ranking de la fecha inicial hasta la penultima fecha en que se jugaron los partidos
+
+```r
+#por medio de unique extraemos las fechas unicas de nuestra columna date, obteniendo 382 fechas
+fecha<-unique(anotaciones$date)
+head (fecha)
+
+n<-length(fecha)
+
+#creamos el ranking idicando la la fecha inicial y la penultima fecha usando nuestra lista de fechas y accediendo a ellas por medio de sus posiciones
+ranking <-rank.teams(anotaciones, equipos, max.date=fecha[n-1], min.date = fecha[1])
+```
+<p align="center">
+        <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork05/imagenes/img2.PNG">
+</p>
+
+4.Estimamos las probabilidades de los eventos, el equipo de casa gana, el equipo visitante gana o el resultado es un empate para los partidos que se jugaron en la última fecha del vector de fechas fecha
+
+```r
+predict(ranking, date = fecha[n])
+```
+<p align="center">
+        <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork05/imagenes/img3.PNG">
+</p>
