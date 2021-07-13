@@ -4,7 +4,7 @@ Este repositorio contiene los postworks de las 8 sesiones del Modulo 2 "Programa
 
 ## Indíce
 
-- [Postwork 1](src/Postwork01)
+- [Postwork 1](Postwork01/Readme.md)
 - [Postwork 2](src/Postwork02)
 - [Postwork 3](src/Postwork03)
 - [Postwork 4](src/Postwork04)
@@ -12,6 +12,7 @@ Este repositorio contiene los postworks de las 8 sesiones del Modulo 2 "Programa
 - [Postwork 6](src/Postwork06)
 - [Postwork 7](src/Postwork07)
 - [Postwork 8](src/Postwork08)
+ - [`Sesión 1:` Introducción a R y Software ](Sesion-01/Readme.md) 
 
 ## Tecnologías ocupadas
 * R Studio 
