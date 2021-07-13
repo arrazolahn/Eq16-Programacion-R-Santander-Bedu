@@ -69,5 +69,5 @@ goles.ts <- ts(dataOrder[,3],start = c(2010,8), frequency = 12,end = c(2019,12))
 goles.ts <- ts(dataOrder[,3],start = c(2010,8), frequency = 12,end = c(2019,12))
 ```
 <p align="center">
-    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork06/imagenes/img4.PNG">
+    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork06/imagenes/img4.png">
 </p>
