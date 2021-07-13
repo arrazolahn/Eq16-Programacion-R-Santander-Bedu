@@ -22,3 +22,37 @@ __Notas para los datos de soccer:__ https://www.football-data.co.uk/notes.txt
 <br />
     <a href="Postwork01.R"><strong>Ver el código</strong></a>
     <br/>
+
+1. Importamos los datos desde la liga
+```r
+data <- read.csv("https://www.football-data.co.uk/mmz4281/1920/SP1.csv")
+
+```
+2. Extraemos las columnas FTHG y FTAG
+```r
+datCasa<-data$FTHG
+datVisitante<-data$FTAG
+```
+3. Con la función `table` obtenemos las diferentes probabilidades
+
+-- La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x = 0, 1, 2, ...) 
+```r
+(tablaCasa<-table(datCasa))
+(totalGoles<-table(datVisitante,datCasa))
+(totalFrecAbsoluta <- sum(totalGoles))
+(FrecRelCasa<-round (tablaCasa/totalFrecAbsoluta,4))
+```
+
+img1.jpg
+
+- La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y = 0, 1, 2, ...)
+```r
+(tablaCasa<-table(datVisitante))
+(FrecRelVisitante<-round (tablaCasa/totalFrecAbsoluta,4))
+```
+
+- La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x = 0, 1, 2, ..., y = 0, 1, 2, ...)
+
+```r
+(FrecRelCon<-round(totalGoles/totalFrecAbsoluta,4))
+```
