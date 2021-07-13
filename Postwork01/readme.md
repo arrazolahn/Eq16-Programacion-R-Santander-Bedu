@@ -43,8 +43,8 @@ datVisitante<-data$FTAG
 (FrecRelCasa<-round (tablaCasa/totalFrecAbsoluta,4))
 ```
 
-![Resultados en R](img1.png)
-
+![Resultados en R](img1.png)    
+<img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork01/imagenes/img1.PNG" alt="Tabla Frecuencia de locales">
 
 - La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y = 0, 1, 2, ...)
 ```r
