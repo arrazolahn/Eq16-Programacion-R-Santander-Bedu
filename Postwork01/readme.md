@@ -19,3 +19,4 @@ Posteriormente elabora tablas de frecuencias relativas para estimar las siguient
 __Notas para los datos de soccer:__ https://www.football-data.co.uk/notes.txt
 
 #### Solución
+    <a href="Postwork01.R"><strong>Código resultante »</strong></a>
