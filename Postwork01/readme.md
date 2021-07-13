@@ -35,7 +35,7 @@ datVisitante<-data$FTAG
 ```
 3. Con la función `table` obtenemos las diferentes probabilidades
 
--- La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x = 0, 1, 2, ...) 
+- La probabilidad (marginal) de que el equipo que juega en casa anote x goles (x = 0, 1, 2, ...) 
 ```r
 (tablaCasa<-table(datCasa))
 (totalGoles<-table(datVisitante,datCasa))
@@ -43,16 +43,19 @@ datVisitante<-data$FTAG
 (FrecRelCasa<-round (tablaCasa/totalFrecAbsoluta,4))
 ```
 
-img1.jpg
+![Resultados en R](img1.png)
+
 
 - La probabilidad (marginal) de que el equipo que juega como visitante anote y goles (y = 0, 1, 2, ...)
 ```r
 (tablaCasa<-table(datVisitante))
 (FrecRelVisitante<-round (tablaCasa/totalFrecAbsoluta,4))
 ```
+![Resultados en R](img2.png)
 
 - La probabilidad (conjunta) de que el equipo que juega en casa anote x goles y el equipo que juega como visitante anote y goles (x = 0, 1, 2, ..., y = 0, 1, 2, ...)
 
 ```r
 (FrecRelCon<-round(totalGoles/totalFrecAbsoluta,4))
 ```
+![Resultados en R](img3.png)
