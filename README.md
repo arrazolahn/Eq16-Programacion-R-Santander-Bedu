@@ -4,14 +4,14 @@ Este repositorio contiene los postworks de las 8 sesiones del Modulo 2 "Programa
 
 ## Indíce
 
-- [Postwork 1](src/Sesion-01)
-- [Postwork 2](src/Sesion-02)
-- [Postwork 3](src/Sesion-03)
-- [Postwork 4](src/Sesion-04)
-- [Postwork 5](src/Sesion-05)
-- [Postwork 6](src/Sesion-06)
-- [Postwork 7](src/Sesion-07)
-- [Postwork 8](src/Sesion-08)
+- [Postwork 1](src/Postwork01)
+- [Postwork 2](src/Postwork02)
+- [Postwork 3](src/Postwork03)
+- [Postwork 4](src/Postwork04)
+- [Postwork 5](src/Postwork05)
+- [Postwork 6](src/Postwork06)
+- [Postwork 7](src/Postwork07)
+- [Postwork 8](src/Postwork08)
 
 ## Tecnologías ocupadas
 * R Studio 
