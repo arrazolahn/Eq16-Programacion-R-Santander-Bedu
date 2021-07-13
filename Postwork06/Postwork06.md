@@ -22,3 +22,14 @@ __Notas para los datos de soccer:__ https://www.football-data.co.uk/notes.txt
 <br />
     <a href="Postwork06.R"><strong>Ver el código</strong></a>
     <br/>
+
+1. Creamos la columna sumagoles como resultado de la suma del score del equipo de casa y el visitante 
+
+```r
+data$sumagoles <- data$home.score + data$away.score
+```
+<p align="center">
+    <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork06/imagenes/img1.PNG">
+</p>
+
+3. 
