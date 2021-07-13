@@ -7,21 +7,21 @@ data <- read.csv("https://raw.githubusercontent.com/beduExpert/Programacion-R-Sa
 head(data) #examinamos el archivo
 
 #1. Agrega una nueva columna sumagoles que contenga la suma de goles por partido.
-#El resultado sera la suma de goles del equipo visitante más los del equipo local
+#El resultado sera la suma de goles del equipo visitante mÃ¡s los del equipo local
 
 data$sumagoles <- data$home.score + data$away.score
 head(data)
 
-#2. Obtén el promedio por mes de la suma de goles.
+#2. ObtÃ©n el promedio por mes de la suma de goles.
 
 #Separamos los datos creando una nueva variable para el numero de mes
 data$month <- as.numeric(month(data$date))
-#Y otra columna para el año
+#Y otra columna para el aÃ±o
 data$year <- as.numeric(year(data$date))
 head(data)
 summary(data)
 
-#Agrupamos los datos por año y por mes, y creamos el promedio
+#Agrupamos los datos por aÃ±o y por mes, y creamos el promedio
 
 df <- data %>% 
   group_by(year,month) %>%
