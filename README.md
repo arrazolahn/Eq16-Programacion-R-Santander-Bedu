@@ -1,6 +1,6 @@
 
 ## Equipo 16: Modulo 2 "Programación y estandística con R" 
-Este repositorio contiene los postworks de las 8 sesiones del Modulo 2 "Programación y estandística con R" del programa "Data Science" ofrecido por BEDU en colaboración con Beca Santander
+Este repositorio contiene los postworks de las 8 sesiones del Modulo 2 "Programación y estandística con R" del programa "Data Science" ofrecido por BEDU y patrocinado por Becas Santander
 
 ## Indíce
 
