@@ -69,6 +69,7 @@ barplot(ProbCasa,xlab="Goles anotados", ylab="Probabilidad",
 <p align="center">
         <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork03/imagenes/img4.png">
 </p>
+
 2.2 Gráfico de barras para las probabilidades marginales estimadas del número de goles que anota el equipo visitante.
 ```r
 barplot(ProbVis,xlab="Goles anotados", ylab="Probabilidad", 
@@ -76,11 +77,12 @@ barplot(ProbVis,xlab="Goles anotados", ylab="Probabilidad",
         ylim =c(0,0.5),
         col = rgb(0.8,0.1,0.1,0.6))
 ```
-
 <p align="center">
         <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork03/imagenes/img5.png">
 </p>
+
 2.3 HeatMap de probabilidades conjuntas estimadas de los números de goles que anotan el equipo de casa y el equipo visitante en un partido.
+
 ```r
 ggplot(as.data.frame(FrecRel), aes(x=datCasa, y=datVis,fill = Freq))+ 
   geom_tile()+ 
@@ -90,7 +92,6 @@ ggplot(as.data.frame(FrecRel), aes(x=datCasa, y=datVis,fill = Freq))+
   labs(y="Numero de Goles del Visitante")+
   labs(fill="Probabilidad")
 ```
-
 <p align="center">
         <img src="https://github.com/arrazolahn/Eq16-Programacion-R-Santander-Bedu/blob/main/Postwork03/imagenes/img6.png">
 </p>
